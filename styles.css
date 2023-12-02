@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #3a3544;
+  text-align: center;
+  font-family: "Euclid Circular A", "Poppins";
+  padding: 20px; /* Adiciona padding para melhor espaçamento */
+}
+
+.titulo {
+  font-size: 3rem;
+  color:   rgb(255,255,255);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ano {
+  font-size: 2rem;
+  color: rgb(255,255,255);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.posicao {
+  text-align: left;
+  margin-top: 40px;
+  
+}
+
+.posicao h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.linha {
+  width: auto; 
+  margin: 20px 0; 
+  border-style: solid; 
+  border-width: 0 0 1px; 
+  border-color: rgb(255,255,255); 
+}
+
+.acordeão {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.acordeão li {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 calc(20% - 16px);
+  margin-bottom: 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.acordeão li img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(0.5);
+  transform: scale(1);
+  transition: opacity 0.3s ease-in-out; /* Duração da transição ajustada para 0.3 segundos */
+  border-radius: 20%;
+}
+
+.acordeão li .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  color: #fff;
+  padding: 15px;
+  background: #02022e;
+  background: linear-gradient(0deg, rgb(0 0 0 / 70%) 10%, rgb(255 255 255 / 0%) 100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out; /* Adiciona transição */
+}
+
+.acordeão li .content span {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Adiciona transição */
+}
+
+.acordeão li:hover {
+  flex: 0 1 calc(33.33% - 10px); /* Ajuste para item expandido */
+  opacity: 1;
+  transform: scale(0.9);
+  border-radius: 20%;
+}
+
+.acordeão li:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.acordeão li:hover img {
+  transform: scale(1.05); /* Ajuste o valor da escala conforme desejado */
+  transition: transform 0.5s ease-in-out; /* Reduz a duração da transição para 0.5 segundos */
+  
+}
+
+.acordeão li:hover span {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.acordeão.goleiros, .zagueiros, .laterais, .volantes, .meiocampo, .atacantes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
