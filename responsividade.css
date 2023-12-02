@@ -1,0 +1,38 @@
+/* Estilos para telas menores, como celulares */
+@media only screen and (max-width: 600px) {
+    .acordeão li {
+        flex: 0 0 calc(50% - 10px); /* Ajuste o tamanho dos itens para ocupar 50% da largura */
+        margin-bottom: 10px; /* Adapta o espaço entre os itens */
+    }
+  
+    .acordeão li img {
+        border-radius: 10%; /* Ajuste o raio da borda da imagem */
+    }
+  
+    .acordeão li:hover {
+        flex: 0 1 calc(50% - 10px); /* Ajuste para item expandido */
+    }
+  
+    .titulo {
+        font-size: 2rem; /* Reduz o tamanho do título */
+    }
+  
+    .ano {
+        font-size: 1.5rem; /* Reduz o tamanho do ano */
+    }
+      
+    .posicao h2 {
+        font-size: 1.5rem; /* Reduz o tamanho do título da posição */
+        margin-bottom: 5px; /* Adapta o espaço abaixo do título da posição */
+    }
+  
+    .linha {
+        margin: 10px 0; /* Adapta a margem da linha */
+    }
+
+    /* Ajuste o tamanho do texto dentro das imagens */
+    .acordeão li .content span h2,
+    .acordeão li .content span p {
+        font-size: 0.8rem;
+    }
+}
